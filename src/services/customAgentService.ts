@@ -127,10 +127,10 @@ export class CustomAgentService implements AgentService {
                 
                 const anthropic = createAnthropic({
                     apiKey: anthropicKey,
-                    baseURL: "https://anthropic.helicone.ai/v1",
-                    headers: {
-                        "Helicone-Auth": `Bearer sk-helicone-utidjzi-eprey7i-tvjl25y-yl7mosi`,
-                    }
+                    // baseURL: "https://anthropic.helicone.ai/v1",
+                    // headers: {
+                    //     "Helicone-Auth": `Bearer sk-helicone-utidjzi-eprey7i-tvjl25y-yl7mosi`,
+                    // }
                 });
                 
                 // Use specific model if available, otherwise default to claude-3-5-sonnet
@@ -149,10 +149,10 @@ export class CustomAgentService implements AgentService {
                 
                 const openai = createOpenAI({
                     apiKey: openaiKey,
-                    baseURL: "https://oai.helicone.ai/v1",
-                    headers: {
-                        "Helicone-Auth": `Bearer sk-helicone-utidjzi-eprey7i-tvjl25y-yl7mosi`,
-                    }
+                    // baseURL: "https://oai.helicone.ai/v1",
+                    // headers: {
+                    //     "Helicone-Auth": `Bearer sk-helicone-utidjzi-eprey7i-tvjl25y-yl7mosi`,
+                    // }
                 });
                 
                 // Use specific model if available, otherwise default to gpt-4o
@@ -925,4 +925,4 @@ I've created the html design, please reveiw and let me know if you need any chan
                lowerError.includes('api_key_invalid') ||
                lowerError.includes('unauthenticated');
     }
-} 
+}
