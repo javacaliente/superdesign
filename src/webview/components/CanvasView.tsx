@@ -311,31 +311,26 @@ const CanvasView: React.FC<CanvasViewProps> = ({ vscode, nonce }) => {
     // Canvas control functions
     const handleZoomIn = () => {
         if (transformRef.current) {
+            console.log('🔍 ZOOM IN - Starting...');
+            
             const currentState = transformRef.current.instance?.transformState;
             const currentScale = currentState?.scale || 1;
             const currentX = currentState?.positionX || 0;
             const currentY = currentState?.positionY || 0;
-            
-            console.log('🔍 ZOOM IN - Before:', {
-                scale: currentScale,
-                positionX: currentX,
-                positionY: currentY
-            });
             
             // Calculate new scale
             const newScale = Math.min(3, currentScale * 1.2); // 20% zoom step
             
             // Get the canvas container element
-            const canvasContainer = document.querySelector('.canvas-container');
-            const canvasWrapper = document.querySelector('.canvas-transform-wrapper');
-            
-            if (canvasContainer && canvasWrapper) {
+            const canvasContainer = document.querySelector('.canvas-container') as HTMLElement;
+            if (canvasContainer) {
                 const containerRect = canvasContainer.getBoundingClientRect();
-                const wrapperRect = canvasWrapper.getBoundingClientRect();
                 
-                // Use the visible viewport center (accounting for toolbar)
+                // Calculate the center point of the visible area (accounting for toolbar)
                 const viewportCenterX = containerRect.width / 2;
-                const viewportCenterY = (containerRect.height - 60) / 2 + 60; // Account for toolbar height
+                const viewportCenterY = (containerRect.height - 60) / 2; // Subtract toolbar height
+                
+                console.log('🔍 ZOOM IN - Center point:', { viewportCenterX, viewportCenterY });
                 
                 // Calculate the point in canvas coordinates that should remain at center
                 const canvasPointX = (viewportCenterX - currentX) / currentScale;
@@ -345,52 +340,40 @@ const CanvasView: React.FC<CanvasViewProps> = ({ vscode, nonce }) => {
                 const newX = viewportCenterX - canvasPointX * newScale;
                 const newY = viewportCenterY - canvasPointY * newScale;
                 
-                // Apply the transform
-                transformRef.current.setTransform(newX, newY, newScale);
+                console.log('🔍 ZOOM IN - Transform:', { newX, newY, newScale });
+                
+                // Apply the transform using setTransform
+                transformRef.current.setTransform(newX, newY, newScale, 200);
             } else {
-                // Fallback: zoom to center using library method
+                // Fallback to simple zoom in
+                console.log('🔍 ZOOM IN - Using fallback method');
                 transformRef.current.zoomIn(0.2, 200);
             }
-            
-            // Log after zoom (with small delay to capture the change)
-            setTimeout(() => {
-                const newState = transformRef.current?.instance?.transformState;
-                console.log('🔍 ZOOM IN - After:', {
-                    scale: newState?.scale,
-                    positionX: newState?.positionX,
-                    positionY: newState?.positionY
-                });
-            }, 50);
         }
     };
 
     const handleZoomOut = () => {
         if (transformRef.current) {
+            console.log('🔍 ZOOM OUT - Starting...');
+            
             const currentState = transformRef.current.instance?.transformState;
             const currentScale = currentState?.scale || 1;
             const currentX = currentState?.positionX || 0;
             const currentY = currentState?.positionY || 0;
             
-            console.log('🔍 ZOOM OUT - Before:', {
-                scale: currentScale,
-                positionX: currentX,
-                positionY: currentY
-            });
-            
             // Calculate new scale
             const newScale = Math.max(0.1, currentScale / 1.2); // 20% zoom step (inverse)
             
             // Get the canvas container element
-            const canvasContainer = document.querySelector('.canvas-container');
-            const canvasWrapper = document.querySelector('.canvas-transform-wrapper');
-            
-            if (canvasContainer && canvasWrapper) {
+            const canvasContainer = document.querySelector('.canvas-container') as HTMLElement;
+            if (canvasContainer) {
                 const containerRect = canvasContainer.getBoundingClientRect();
-                const wrapperRect = canvasWrapper.getBoundingClientRect();
                 
-                // Use the visible viewport center (accounting for toolbar)
+                // Calculate the center point of the visible area (accounting for toolbar)
                 const viewportCenterX = containerRect.width / 2;
-                const viewportCenterY = (containerRect.height - 60) / 2 + 60; // Account for toolbar height
+                const viewportCenterY = (containerRect.height - 60) / 2; // Subtract toolbar height
+                
+                console.log('🔍 ZOOM OUT - Center point:', { viewportCenterX, viewportCenterY });
                 
                 // Calculate the point in canvas coordinates that should remain at center
                 const canvasPointX = (viewportCenterX - currentX) / currentScale;
@@ -400,22 +383,15 @@ const CanvasView: React.FC<CanvasViewProps> = ({ vscode, nonce }) => {
                 const newX = viewportCenterX - canvasPointX * newScale;
                 const newY = viewportCenterY - canvasPointY * newScale;
                 
-                // Apply the transform
-                transformRef.current.setTransform(newX, newY, newScale);
+                console.log('🔍 ZOOM OUT - Transform:', { newX, newY, newScale });
+                
+                // Apply the transform using setTransform
+                transformRef.current.setTransform(newX, newY, newScale, 200);
             } else {
-                // Fallback: zoom to center using library method
+                // Fallback to simple zoom out
+                console.log('🔍 ZOOM OUT - Using fallback method');
                 transformRef.current.zoomOut(0.2, 200);
             }
-            
-            // Log after zoom (with small delay to capture the change)
-            setTimeout(() => {
-                const newState = transformRef.current?.instance?.transformState;
-                console.log('🔍 ZOOM OUT - After:', {
-                    scale: newState?.scale,
-                    positionX: newState?.positionX,
-                    positionY: newState?.positionY
-                });
-            }, 50);
         }
     };
 
