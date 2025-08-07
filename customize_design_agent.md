@@ -4,14 +4,14 @@ This guide shows you how to customize and extend the SuperDesign agent to match 
 
 ## 📋 Table of Contents
 
-1. [Quick Customization](#quick-customization)
-2. [System Prompt Modification](#system-prompt-modification)
-3. [Theme System Customization](#theme-system-customization)
-4. [Workflow Modification](#workflow-modification)
-5. [Tool Development](#tool-development)
-6. [Rules System Integration](#rules-system-integration)
-7. [Advanced Configuration](#advanced-configuration)
-8. [Examples & Templates](#examples--templates)
+1. [Quick Customization](#-quick-customization)
+2. [System Prompt Modification](#-system-prompt-modification)
+3. [Theme System Customization](#-theme-system-customization)
+4. [Workflow Modification](#-workflow-modification)
+5. [Tool Development](#-tool-development)
+6. [Rules System Integration](#-rules-system-integration)
+7. [Advanced Configuration](#-advanced-configuration)
+8. [Examples & Templates](#-examples--templates)
 
 ---
 
