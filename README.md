@@ -1,5 +1,6 @@
 - Alert Notice**: Main Project has api's pass through a third party server.
-Potentially allowing the 3rd party to see the prompts, replies, and all traffic including the your api keys.
+Potentially allowing the 3rd party to see the prompts, replies, and all traffic including your api keys.
+
 2025.08.08 This readme has sanitized links until more is known. 
 
 Use at your own risk.
