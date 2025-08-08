@@ -1,22 +1,18 @@
-# 🧠 SuperDesign — Advanced AI Design Agent for Your IDE
+- Alert Notice**: Main Project has api's pass through a third party server.
+Potentially allowing the 3rd party to see the prompts, replies, and all traffic including the your api keys.
+2025.08.08 This readme has sanitized links until more is known. 
+
+Use at your own risk.
+
+# 🧠 S0uperDesign — Advanced AI Design Agent for Your IDE
 
 ![SuperDesign Cover](cover.png)
-
-### **By:** [AI Jason](https://x.com/jasonzhou1993) & [JackJack](https://x.com/jackjack_eth)
 
 SuperDesign is a **professional-grade, open-source design agent** that lives inside your IDE with advanced AI integration, sophisticated tooling, and enterprise-ready architecture. Generate UI mockups, components, and wireframes with multi-provider AI support, real-time streaming, and comprehensive development tools.
 
 Works seamlessly with **Cursor**, **Windsurf**, **Claude Code**, **Cline**, and **VS Code**.
 
 > ✨ "Why design one option when you can explore ten with professional-grade tools?" — SuperDesign
-
-[Join Discord](https://discord.gg/FYr49d6cQ9) | [Install Guide](https://www.superdesign.dev/) | [Upvote on Hackernews](https://news.ycombinator.com/item?id=44376003)
-
----
-
-## 🎬 Demo Video (Click to play)
-
-[![SuperDesign Demo](https://img.youtube.com/vi/INv6oZDhhUM/maxresdefault.jpg)](https://youtu.be/INv6oZDhhUM)
 
 ---
 
@@ -57,7 +53,6 @@ Works seamlessly with **Cursor**, **Windsurf**, **Claude Code**, **Cline**, and 
 
 ### 🤖 **Cline AI Assistant Integration**
 SuperDesign includes sophisticated integration with [Cline](https://github.com/cline/cline), providing:
-
 - **MCP (Model Context Protocol)** support for enhanced tool capabilities
 - **Task Master AI** integration for project management and workflow automation
 - **Advanced Rules System** with `.cursor/rules/` for development guidelines
@@ -244,7 +239,7 @@ SuperDesign is open source and welcomes contributions:
 
 ### Development Setup
 ```bash
-git clone https://github.com/superdesigndev/superdesign
+git clone [repository-url]
 cd superdesign
 npm install
 npm run compile
@@ -304,19 +299,19 @@ SuperDesign includes comprehensive Cline integration with MCP support, task mana
 
 **Is it suitable for production use?**  
 Yes! Enterprise-grade architecture with TypeScript, comprehensive error handling, and professional tooling.
-
 ---
 
 ## 🔗 Links & Resources
 
-- 🌐 **Website**: [https://superdesign.dev](https://superdesign.dev)
-- 📦 **GitHub**: [https://github.com/superdesigndev/superdesign](https://github.com/superdesigndev/superdesign)
-- 💬 **Discord**: [Join the Community](https://discord.gg/FYr49d6cQ9)
-- 🐦 **Twitter**: [@SuperDesignDev](https://x.com/SuperDesignDev)
+- 🌐 **Website**: 
+- 📦 **GitHub**: 
+- 💬 **Discord**: 
+- 🐦 **Twitter**: 
 - 📚 **Documentation**: [Cline Integration Guide](.cline/README.md)
 - 🎨 **Customization**: [Complete Customization Guide](customize_design_agent.md)
 - 🛠️ **Development**: [Contributing Guidelines](CONTRIBUTING.md)
 
+- Safety Notice**: Main Project has undocumented api passed through a third party.
 ---
 
 ## 📄 License
